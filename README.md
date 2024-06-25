@@ -17,13 +17,18 @@ This project is a automatic updater for any python virtual environment. It's wri
 
 ## Installation
 
+To install the Pip Updater, follow these steps:
+
 ```bash
 git clone https://github.com/gylfirst/pip-updater.git
 cd pip-updater
 chmod +x ./pip_updater.sh
 ```
 
-## Utilisation
+Once you have cloned the repository and navigated to the `pip-updater` directory, make the `pip_updater.sh` script executable by running the command `chmod +x ./pip_updater.sh`.
+
+## Usage
+
 ```bash
 ./pip_updater.sh
 ```
@@ -33,8 +38,8 @@ chmod +x ./pip_updater.sh
 3. Tell if you want to update pip.
 4. Tell if you want to update all outdated packages.
 
-# Auteur
+# Author
 [Gylfirst](https://github.com/gylfirst)
 
-# Licence
+# License
 This project is licensed under the MIT License.
