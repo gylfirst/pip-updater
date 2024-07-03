@@ -123,7 +123,7 @@ check_other_updates() {
                 ;;
         esac
     fi
-    }
+}
 
 main() {
     # Activate the virtualenv

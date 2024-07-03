@@ -2,6 +2,8 @@
 
 This project is a automatic updater for any python virtual environment. It's written in bash.
 
+> There is a command with virtual env dedicated to update all packages. I just wanted to train myself.
+
 ## Functionalities
 
 - Automatically updates any Python virtual environment.
