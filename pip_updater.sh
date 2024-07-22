@@ -19,16 +19,6 @@ activate_virtualenv() {
     echo "Virtual environment activated: $(python --version)"
 }
 
-set_default_choice() {
-    local input_choice="$1"
-    # Check if the user has entered a valid option
-    if [ -z "$input_choice" ] || [ "$input_choice" == "Y" ]; then
-        echo "y"
-    else
-        echo "$input_choice"
-    fi
-}
-
 check_updates() {
     echo 'Checking if package updates are available...'
     # Capture the output of 'pip list -o'
@@ -38,7 +28,7 @@ check_updates() {
 ask_backup() {
     # Ask the user if he wants to create a backup
     read -p "Do you want to create a backup of your current installed packages? (Y/n) " choice
-    choice=$(set_default_choice "$choice")
+    : ${choice:="y"}
     case $choice in
         y)
             read -p "Enter the absolute path of your backup file: " backup_path
@@ -75,7 +65,7 @@ pip_update() {
     if echo "$output" | grep -q "^pip "; then
         echo "Package 'pip' is outdated"
         read -p "Do you want to update it? (Y/n) " choice
-        choice=$(set_default_choice "$choice")
+        : ${choice:="y"}
         case $choice in
             y)
                 pip install -U pip
@@ -109,7 +99,7 @@ check_other_updates() {
     else
         echo "There are outdated packages"
         read -p "Do you want to update them? (Y/n) " choice
-        choice=$(set_default_choice "$choice")
+        : ${choice:="y"}
         case $choice in
             y)
                 update_packages
